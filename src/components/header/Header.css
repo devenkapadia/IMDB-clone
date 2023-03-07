@@ -1,0 +1,9 @@
+.header{
+    background-color: black;
+}
+
+
+.headerIcon {
+    width: 80px;
+    cursor: pointer;
+}
