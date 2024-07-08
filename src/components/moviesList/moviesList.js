@@ -7,9 +7,9 @@ const MoviesList = () => {
     const [movieList, setMovieList] = useState([])
     const { type } = useParams()
 
-    useEffect(() => {
-        getData()
-    }, [])
+    // useEffect(() => {
+    //     getData()
+    // }, [])
 
     useEffect(() => {
         getData()
@@ -22,12 +22,12 @@ const MoviesList = () => {
     }
 
     return (
-        <div className="container my-2 movie__list">
+        <div className="movie__list">
             <h2 className="list__title">{(type ? type : "POPULAR").toUpperCase()}</h2>
-            <div className="cards row">
+            <div className="cards-row">
                 {
                     movieList.map(movie => {
-                        return <div className="col-md-3 my-3">
+                        return <div className="col-md-3 my-3 cards-data">
                             <Card movie={movie} />
                         </div>
                     })

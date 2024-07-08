@@ -21,9 +21,8 @@ const Card = ({ movie }) => {
             </div>
             :
             <Link to={`/movie/${movie.id}`} style={{ textDecoration: "none", color: "black" }}>
-
-                <div class="card" style={{ width: "18rem" }}>
-                    <span class="position-absolute top-0 translate-middle badge rounded-pill bg-primary" style={{ left: '95%', zIndex: 1 }}>{movie ? movie.vote_average : ""}<i className="fas fa-star" /></span>
+                <div class="card">
+                    <span class="position-absolute top-0 translate-middle badge rounded-pill bg-primary" style={{ left: '95%', zIndex: 1 }}>{movie ? movie.vote_average.toFixed(1) : ""}<i className="fas fa-star" /></span>
                     <img src={`https://image.tmdb.org/t/p/original${movie ? movie.poster_path : ""}`} class="card-img-top" alt="..." />
                     <div class="card-body cards__overlay">
                         <div className="card__title"><h5>

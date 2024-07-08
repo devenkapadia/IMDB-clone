@@ -1,7 +1,9 @@
 .App {
-  background-color: black;
+  background-color: #45474B;
   text-align: center;
   color: white;
+  margin: 0;
+  padding: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -11,7 +13,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #405D72;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -31,5 +33,30 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .App-header {
+    font-size: calc(10px + 1.5vmin);
+  }
+}
+
+@media (max-width: 992px) {
+  .App-header {
+    font-size: calc(10px + 1.2vmin);
+  }
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    font-size: calc(10px + 1vmin);
+  }
+}
+
+@media (max-width: 576px) {
+  .App-header {
+    font-size: calc(10px + 0.8vmin);
   }
 }

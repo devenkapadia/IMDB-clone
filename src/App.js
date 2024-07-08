@@ -8,6 +8,7 @@ import Header from './components/header/Header';
 import Home from './pages/home/home'
 import MoviesList from './components/moviesList/moviesList';
 import MovieDetail from './pages/movieDetail/movieDetail';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -15,15 +16,16 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route index element={<Home/>}>
+          <Route index element={<Home />}>
           </Route>
-          <Route path='movie/:id' element={<MovieDetail/>}>
+          <Route path='movie/:id' element={<MovieDetail />}>
           </Route>
-          <Route path='movies/:type' element={<MoviesList/>}>
+          <Route path='movies/:type' element={<MoviesList />}>
           </Route>
           <Route path='/*' element={<h1>Error Page</h1>}>
           </Route>
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

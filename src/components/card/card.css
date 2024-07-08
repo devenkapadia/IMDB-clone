@@ -1,40 +1,100 @@
+.cards {
+  background-color: rgb(90, 90, 90);
+}
+
+.card {
+  width: 15rem;
+  margin: 0;
+  transition: transform 0.3s, box-shadow 0.3s; /* Added transition for smoother scaling */
+}
+
 .card-body {
   color: white;
-  /* background-color: antiquewhite; */
 }
 
 .card__description {
   justify-content: flex-start;
+  font-style: italic;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
 }
 
 .card:hover {
-  transform: scale(1.2);
+  transform: scale(1.25);
   z-index: 1000;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+              rgba(0, 0, 0, 0.12) 0px -12px 30px,
+              rgba(0, 0, 0, 0.12) 0px 4px 6px,
+              rgba(0, 0, 0, 0.17) 0px 12px 13px,
+              rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .cards__overlay {
-    position: absolute;
-    padding: 0 1rem 1rem 1rem;
-    bottom: 0px;
-    height: 290px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
-    opacity: 0;
-    transition: opacity .2s;
-}   
-
-.cards__overlay:hover {
-    opacity: 1;
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  background-image: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 
-.card__description {
-    font-style: italic;
-    font-size: .75rem;
-    margin-bottom: 0.25rem;
+.cards__overlay:hover {
+  opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .card {
+    width: 13rem;
+  }
+
+  .card__description {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .card {
+    width: 11rem;
+  }
+
+  .card__description {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 9rem;
+  }
+
+  .card__description {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 100%;
+    margin-bottom: 1rem; /* Added margin for spacing between cards */
+  }
+
+  .card__description {
+    font-size: 0.55rem;
+  }
+
+  .cards__overlay {
+    /* position: relative;  */
+    /* Adjusted position for better mobile display */
+    background-image: none; /* Removed gradient for simplicity */
+    opacity: 1; /* Always visible on small screens */
+    background-color: none;
+  }
+
+  .cards__overlay:hover {
+    opacity: 1; /* Remove hover effect on small screens */
+  }
 }
